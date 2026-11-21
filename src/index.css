@@ -79,3 +79,28 @@ a:focus-visible {
     transition-duration: 0.01ms !important;
   }
 }
+
+
+.birthday-placeholder {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 25px;
+  gap: 20px;
+  background: linear-gradient(135deg, #fff6f9, #ffe5ef);
+  color: var(--rose);
+}
+
+.birthday-placeholder h1 {
+  font-family: var(--font-heading);
+}
+
+.birthday-placeholder button {
+  background: var(--pink-dark);
+  color: white;
+  padding: 13px 25px;
+  border-radius: 30px;
+}

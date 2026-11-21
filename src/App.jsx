@@ -1,44 +1,31 @@
 
-import FloatingDecorations from './components/FloatingDecorations';
+import { useState } from 'react';
+
+import WelcomeScreen from './components/WelcomeScreen';
 
 function App() {
+  const [currentStage, setCurrentStage] = useState('welcome');
+
   return (
-    <main style={{
-      minHeight: '100vh',
-      display: 'grid',
-      placeItems: 'center',
-      textAlign: 'center',
-      padding: '30px',
-      position: 'relative',
-      overflow: 'hidden',
-      background: 'linear-gradient(135deg, #fff6f9, #ffe5ef, #fffaf3)'
-    }}>
-      <FloatingDecorations />
+    <>
+      {currentStage === 'welcome' && (
+        <WelcomeScreen
+          onEnter={() => setCurrentStage('birthday')}
+        />
+      )}
 
-      <div style={{ position: 'relative', zIndex: 1 }}>
-        <p style={{ fontSize: '18px' }}>A little surprise is coming...</p>
+      {currentStage === 'birthday' && (
+        <main className="birthday-placeholder">
+          <h1>Happy 24th Birthday, Menuli! ❤️</h1>
 
-        <h1 style={{
-          fontFamily: 'var(--font-romantic)',
-          fontSize: 'clamp(55px, 10vw, 95px)',
-          color: 'var(--pink-dark)',
-          margin: '20px 0'
-        }}>
-          For My Babiii
-        </h1>
+          <p>Your little birthday world is just beginning...</p>
 
-        <h2 style={{
-          fontFamily: 'var(--font-heading)',
-          fontWeight: 500
-        }}>
-          A Little World Made for Princess ♡
-        </h2>
-
-        <p style={{ marginTop: '15px', color: 'var(--text-muted)' }}>
-          Made with love, just for you.
-        </p>
-      </div>
-    </main>
+          <button onClick={() => setCurrentStage('welcome')}>
+            Back to Welcome
+          </button>
+        </main>
+      )}
+    </>
   );
 }
 
