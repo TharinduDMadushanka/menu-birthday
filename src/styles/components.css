@@ -1,0 +1,20 @@
+
+.floating-decorations {
+  position: fixed;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.floating-decoration {
+  position: absolute;
+  bottom: -50px;
+  color: #e99ab9;
+  text-shadow: 0 0 12px rgba(233, 154, 185, 0.4);
+  will-change: transform, opacity;
+}
+
+button:active {
+  transform: scale(0.97);
+}
