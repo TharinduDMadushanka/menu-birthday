@@ -153,7 +153,7 @@ function WelcomeScreen({ onEnter, isMusicPlaying, musicError, onToggleMusic }) {
 
               {musicError && (
                 <p className="music-error">
-                  Add your music file to public/assets/romantic-music.mp3
+                  The music could not be played. Please check the audio file.
                 </p>
               )}
 

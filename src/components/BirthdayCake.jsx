@@ -168,7 +168,7 @@ function BirthdayCake({ onBack, onContinue }) {
           animate={{ opacity: 1 }}
           transition={{ delay: 0.3 }}
         >
-          Twenty-four candles for your twenty-fourth birthday.
+          Twenty four candles for your twenty fourth birthday.
           Close your eyes, make a beautiful wish, and blow them out!
         </motion.p>
 

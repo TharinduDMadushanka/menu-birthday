@@ -24,19 +24,19 @@ The deployable static site is generated in `dist/`.
 
 ## Replace photos
 
-The gallery is in `src/components/MemoriesGallery.jsx`. Replace each placeholder source, caption, and optional date in the `memories` array near the top of that file. You can use local images from `public/assets/images/` or external image URLs.
+Put gallery photos in `public/images/`. Update the image paths, captions, and titles in `src/data/memories.js`. For example, a file at `public/images/memory-1.jpeg` must use the URL `/images/memory-1.jpeg` in the data file (include the leading slash and `images/` folder). Public files are served from the site root; do not use `public/` in the URL.
 
 For best results, use optimized `.jpg`, `.webp`, or `.png` images, approximately 1200 pixels wide. Keep personal photos private and avoid uploading them to a public repository unless you are comfortable sharing them.
 
 ## Add background music
 
-Add an audio file with this exact name:
+The app currently imports the birthday track from:
 
 ```text
-public/assets/romantic-music.mp3
+src/assets/music/the_mountain-happy-birthday-576570.mp3
 ```
 
-You may replace the existing file, but it must remain licensed for this use or be royalty-free. Browsers do not allow music to autoplay with sound; the visitor can enable it using the music control.
+To use a different track, replace that file or update its import in `src/App.jsx`. Keep the audio format browser-compatible (MP3 is recommended). The track must be licensed for this use or royalty-free. Browsers do not allow music to autoplay with sound; the visitor can start it using the music control.
 
 ## Deploy to Vercel
 

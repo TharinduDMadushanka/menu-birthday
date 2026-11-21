@@ -8,6 +8,7 @@ import MemoriesGallery from './components/MemoriesGallery';
 import BirthdayWishes from './components/BirthdayWishes';
 import BirthdayCake from './components/BirthdayCake';
 import FinalSurprise from './components/FinalSurprise';
+import birthdayMusic from './assets/music/the_mountain-happy-birthday-576570.mp3';
 import './App.css';
 
 const stages = ['welcome', 'birthday', 'letter', 'memories', 'wishes', 'cake', 'final'];
@@ -51,7 +52,7 @@ function App() {
     <>
       <audio
         ref={audioRef}
-        src="/assets/romantic-music.mp3"
+        src={birthdayMusic}
         loop
         preload="none"
         onError={() => {
