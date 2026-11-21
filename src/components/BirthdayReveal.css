@@ -1,0 +1,275 @@
+
+.birthday-screen {
+  min-height: 100vh;
+  min-height: 100svh;
+  width: 100%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  padding: 55px 22px;
+  background:
+    radial-gradient(ellipse at 15% 20%, #ffe1ed 0%, transparent 42%),
+    radial-gradient(ellipse at 85% 80%, #f1e2f4 0%, transparent 42%),
+    linear-gradient(135deg, #fff8fa, #ffedf3, #fff8f3);
+}
+
+.birthday-content {
+  width: 100%;
+  max-width: 760px;
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.birthday-glow {
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  filter: blur(90px);
+  opacity: 0.35;
+  pointer-events: none;
+}
+
+.birthday-glow-one {
+  background: #f4a6c1;
+  top: -120px;
+  left: -100px;
+}
+
+.birthday-glow-two {
+  background: #d9c0e9;
+  bottom: -120px;
+  right: -100px;
+}
+
+.birthday-top-label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  color: #bc7795;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 2.5px;
+  margin-bottom: 12px;
+}
+
+.birthday-balloons {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  gap: 17px;
+  height: 105px;
+  margin-bottom: 15px;
+}
+
+.balloon {
+  width: 54px;
+  height: 68px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50% 50% 46% 46%;
+  position: relative;
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 25px;
+  box-shadow: inset -7px -8px 14px rgba(150, 80, 110, 0.08);
+  animation: birthdayBalloonFloat 3s ease-in-out infinite;
+}
+
+.balloon::after {
+  content: '';
+  position: absolute;
+  width: 1px;
+  height: 38px;
+  background: rgba(184, 92, 128, 0.35);
+  top: 67px;
+  left: 50%;
+}
+
+.balloon-pink {
+  background: linear-gradient(135deg, #f7bfd3, #e99ab9);
+  transform: rotate(-10deg);
+}
+
+.balloon-lavender {
+  background: linear-gradient(135deg, #e7d4ef, #c9a9dc);
+  height: 78px;
+  width: 60px;
+  animation-delay: 0.5s;
+}
+
+.balloon-cream {
+  background: linear-gradient(135deg, #fff0d9, #f1d4bd);
+  transform: rotate(10deg);
+  animation-delay: 1s;
+}
+
+.birthday-heart {
+  margin-bottom: 10px;
+  filter: drop-shadow(0 5px 12px rgba(217, 121, 160, 0.2));
+}
+
+.birthday-eyebrow {
+  color: #bc7795;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  margin-bottom: 13px;
+}
+
+.birthday-title {
+  color: #bd6c90;
+  font-family: var(--font-heading);
+  font-size: clamp(35px, 7vw, 62px);
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+.birthday-title span {
+  display: block;
+  color: #d979a0;
+  font-family: var(--font-romantic);
+  font-size: clamp(55px, 10vw, 88px);
+  font-weight: 400;
+  line-height: 1.25;
+}
+
+.birthday-divider {
+  height: 2px;
+  background: #edb2c9;
+  margin: 20px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.birthday-divider svg {
+  position: absolute;
+  background: #fff4f7;
+  padding: 0 5px;
+  box-sizing: content-box;
+  color: #d979a0;
+}
+
+.birthday-message {
+  max-width: 540px;
+  color: #987386;
+  font-size: 14px;
+  line-height: 2;
+}
+
+.birthday-wish {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 24px;
+  padding: 12px 18px;
+  border: 1px solid rgba(217, 121, 160, 0.2);
+  border-radius: 30px;
+  background: rgba(255, 255, 255, 0.48);
+  color: #bd7895;
+  font-family: var(--font-heading);
+  font-size: 14px;
+  font-style: italic;
+}
+
+.birthday-wish svg {
+  color: #d99bb4;
+  flex-shrink: 0;
+}
+
+.birthday-continue-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  min-height: 55px;
+  padding: 0 28px;
+  margin-top: 30px;
+  border-radius: 40px;
+  background: linear-gradient(135deg, #e99ab9, #d979a0);
+  color: white;
+  font-size: 14px;
+  font-weight: 700;
+  box-shadow: 0 8px 22px rgba(217, 121, 160, 0.25);
+}
+
+.birthday-footer {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  margin-top: 28px;
+  color: #b98b9e;
+  font-size: 12px;
+}
+
+@keyframes birthdayBalloonFloat {
+  0%, 100% {
+    translate: 0 0;
+  }
+  50% {
+    translate: 0 -10px;
+  }
+}
+
+@media (max-width: 600px) {
+  .birthday-screen {
+    padding: 45px 20px;
+  }
+
+  .birthday-top-label {
+    font-size: 8px;
+    letter-spacing: 1.5px;
+  }
+
+  .birthday-balloons {
+    height: 90px;
+    margin-bottom: 10px;
+  }
+
+  .balloon {
+    width: 45px;
+    height: 58px;
+  }
+
+  .balloon-lavender {
+    width: 51px;
+    height: 67px;
+  }
+
+  .balloon::after {
+    top: 57px;
+  }
+
+  .birthday-message {
+    font-size: 13px;
+  }
+
+  .birthday-wish {
+    font-size: 12px;
+    padding: 10px 12px;
+    gap: 6px;
+  }
+
+  .birthday-continue-button {
+    width: 100%;
+    max-width: 290px;
+    padding: 0 16px;
+    gap: 9px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .balloon {
+    animation: none;
+  }
+}

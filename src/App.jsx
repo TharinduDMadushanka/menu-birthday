@@ -1,7 +1,7 @@
 
 import { useState } from 'react';
-
 import WelcomeScreen from './components/WelcomeScreen';
+import BirthdayReveal from './components/BirthdayReveal';
 
 function App() {
   const [currentStage, setCurrentStage] = useState('welcome');
@@ -15,13 +15,17 @@ function App() {
       )}
 
       {currentStage === 'birthday' && (
+        <BirthdayReveal
+          onContinue={() => setCurrentStage('letter')}
+        />
+      )}
+
+      {currentStage === 'letter' && (
         <main className="birthday-placeholder">
-          <h1>Happy 24th Birthday, Menuli! ❤️</h1>
-
-          <p>Your little birthday world is just beginning...</p>
-
-          <button onClick={() => setCurrentStage('welcome')}>
-            Back to Welcome
+          <h1>A Little Letter for You ❤️</h1>
+          <p>Your love letter experience will be built in the next phase.</p>
+          <button onClick={() => setCurrentStage('birthday')}>
+            Back to Birthday
           </button>
         </main>
       )}
