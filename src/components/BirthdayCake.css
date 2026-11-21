@@ -222,6 +222,7 @@
   color: #d58cab;
   font-size: 24px;
   pointer-events: none;
+  z-index: 3;
 }
 
 .cake-sparkles span {
@@ -271,6 +272,44 @@
 
 .cake-scene-celebrating .candle-flame {
   display: none;
+}
+
+.cake-confetti {
+  position: absolute;
+  inset: 0;
+  z-index: 5;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.cake-confetti span {
+  position: absolute;
+  top: 28%;
+  width: 7px;
+  height: 12px;
+  border-radius: 2px;
+  opacity: 0;
+  animation: cakeConfettiFall 1.8s ease-out both;
+}
+
+.cake-confetti span:nth-child(3n) {
+  width: 5px;
+  height: 9px;
+  border-radius: 50%;
+}
+
+@keyframes cakeConfettiFall {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px) rotate(0);
+  }
+  15% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(205px) rotate(540deg);
+  }
 }
 
 .cake-celebration {
@@ -471,7 +510,8 @@
 
 @media (prefers-reduced-motion: reduce) {
   .candle-flame,
-  .cake-sparkles span {
+  .cake-sparkles span,
+  .cake-confetti span {
     animation: none;
   }
 }

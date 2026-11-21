@@ -168,7 +168,7 @@ function BirthdayCake({ onBack, onContinue }) {
           animate={{ opacity: 1 }}
           transition={{ delay: 0.3 }}
         >
-          Twenty four candles for your twenty fourth birthday.
+          Twenty-four candles for your twenty-fourth birthday.
           Close your eyes, make a beautiful wish, and blow them out!
         </motion.p>
 
@@ -185,6 +185,21 @@ function BirthdayCake({ onBack, onContinue }) {
             <span>✦</span>
             <span>♡</span>
           </div>
+
+          {candlesOut && (
+            <div className="cake-confetti" aria-hidden="true">
+              {Array.from({ length: 28 }, (_, index) => (
+                <span
+                  key={index}
+                  style={{
+                    left: `${(index * 37) % 100}%`,
+                    animationDelay: `${(index % 7) * 0.06}s`,
+                    backgroundColor: ['#e99ab9', '#f4c76b', '#c8a9dd', '#f28da9'][index % 4],
+                  }}
+                />
+              ))}
+            </div>
+          )}
 
           <div className="cake">
             <div className="cake-top">
@@ -262,7 +277,7 @@ function BirthdayCake({ onBack, onContinue }) {
               onClick={extinguishCandles}
             >
               <Wind size={19} />
-              Blow Out All 24 Candles
+              Make a Wish
             </button>
 
             <p className="cake-mic-message" role="status" aria-live="polite">
@@ -279,7 +294,7 @@ function BirthdayCake({ onBack, onContinue }) {
             initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
           >
-            <h2>Happy 24th Birthday, my princess! ♡</h2>
+            <h2>May all your beautiful wishes come true, my princess! ❤️</h2>
             <p>
               I hope every little wish in your heart comes true.
               You deserve all the happiness in the world.
