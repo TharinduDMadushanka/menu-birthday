@@ -5,6 +5,7 @@ import BirthdayReveal from './components/BirthdayReveal';
 import LoveLetter from './components/LoveLetter';
 import MemoriesGallery from './components/MemoriesGallery';
 import BirthdayWishes from './components/BirthdayWishes';
+import BirthdayCake from './components/BirthdayCake';
 
 function App() {
   const [currentStage, setCurrentStage] = useState('welcome');
@@ -44,11 +45,18 @@ function App() {
       )}
 
       {currentStage === 'cake' && (
+        <BirthdayCake
+          onBack={() => setCurrentStage('wishes')}
+          onContinue={() => setCurrentStage('final')}
+        />
+      )}
+
+      {currentStage === 'final' && (
         <main className="birthday-placeholder">
-          <h1>A Birthday Cake for You 🎂</h1>
-          <p>Your special birthday cake experience is coming next...</p>
-          <button onClick={() => setCurrentStage('wishes')}>
-            Back to Birthday Wishes
+          <h1>One Last Surprise ❤️</h1>
+          <p>Your final birthday surprise is coming next...</p>
+          <button onClick={() => setCurrentStage('cake')}>
+            Back to the Birthday Cake
           </button>
         </main>
       )}
