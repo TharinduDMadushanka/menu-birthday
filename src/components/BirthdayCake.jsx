@@ -111,7 +111,7 @@ function BirthdayCake({ onBack, onContinue }) {
           extinguishCandles();
         }
       }, 100);
-    } catch (error) {
+    } catch {
       stopMicrophone();
       setMicMessage(
         'We could not access your microphone. No worries — use the button to blow out your candles!'
@@ -279,7 +279,7 @@ function BirthdayCake({ onBack, onContinue }) {
             initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
           >
-            <h2>Happy 24th Birthday, Menuli! ♡</h2>
+            <h2>Happy 24th Birthday, my princess! ♡</h2>
             <p>
               I hope every little wish in your heart comes true.
               You deserve all the happiness in the world.

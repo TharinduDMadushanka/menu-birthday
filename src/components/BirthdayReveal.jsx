@@ -60,7 +60,7 @@ function BirthdayReveal({ onContinue }) {
           transition={{ delay: 1, duration: 0.9 }}
         >
           Happy 24th
-          <span>Birthday, Menuli!</span>
+          <span>Birthday, my Babyy!</span>
         </motion.h1>
 
         <motion.div

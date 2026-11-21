@@ -97,7 +97,7 @@ function LoveLetter({ onContinue }) {
               </div>
 
               <div className="letter-body">
-                <p className="letter-dear">My dearest Menuli,</p>
+                <p className="letter-dear">My dearest babyy,</p>
 
                 <p>
                   First of all, Happy Birthday, my Babiii! ❤️

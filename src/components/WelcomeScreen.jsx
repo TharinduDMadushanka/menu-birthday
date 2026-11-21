@@ -1,5 +1,5 @@
 
-import { useRef, useState } from 'react';
+import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import {
   Heart,
@@ -13,33 +13,8 @@ import {
 import FloatingDecorations from './FloatingDecorations';
 import './WelcomeScreen.css';
 
-function WelcomeScreen({ onEnter }) {
+function WelcomeScreen({ onEnter, isMusicPlaying, musicError, onToggleMusic }) {
   const [isOpening, setIsOpening] = useState(false);
-  const [isPlaying, setIsPlaying] = useState(false);
-  const [musicError, setMusicError] = useState(false);
-
-  const audioRef = useRef(null);
-
-  const toggleMusic = async () => {
-    const audio = audioRef.current;
-
-    if (!audio) return;
-
-    if (isPlaying) {
-      audio.pause();
-      setIsPlaying(false);
-      return;
-    }
-
-    try {
-      await audio.play();
-      setIsPlaying(true);
-      setMusicError(false);
-    } catch {
-      setMusicError(true);
-      setIsPlaying(false);
-    }
-  };
 
   const handleEnter = () => {
     if (isOpening) return;
@@ -60,29 +35,16 @@ function WelcomeScreen({ onEnter }) {
       <div className="welcome-glow welcome-glow-one" />
       <div className="welcome-glow welcome-glow-two" />
 
-      {/* Background music */}
-      <audio
-        ref={audioRef}
-        src="/assets/romantic-music.mp3"
-        loop
-        preload="none"
-        onEnded={() => setIsPlaying(false)}
-        onError={() => {
-          setIsPlaying(false);
-          setMusicError(true);
-        }}
-      />
-
       {/* Music control */}
       <motion.button
         className="music-control"
-        onClick={toggleMusic}
+        onClick={onToggleMusic}
         whileHover={{ scale: 1.08 }}
         whileTap={{ scale: 0.92 }}
-        aria-label={isPlaying ? 'Pause music' : 'Play music'}
+        aria-label={isMusicPlaying ? 'Pause music' : 'Play music'}
       >
-        {isPlaying ? <Music2 size={19} /> : <VolumeX size={19} />}
-        <span>{isPlaying ? 'Music On' : 'Music Off'}</span>
+        {isMusicPlaying ? <Music2 size={19} /> : <VolumeX size={19} />}
+        <span>{isMusicPlaying ? 'Music On' : 'Music Off'}</span>
       </motion.button>
 
       <div className="welcome-content">

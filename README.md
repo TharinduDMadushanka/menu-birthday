@@ -1,16 +1,59 @@
-# React + Vite
+# A Little World Made for Menuli
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+A responsive romantic birthday experience built with React and Vite.
 
-Currently, two official plugins are available:
+## Run locally
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+Requires Node.js 20 or newer.
 
-## React Compiler
+```powershell
+npm install
+npm run dev
+```
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Open the local URL shown by Vite, usually `http://localhost:5173`.
 
-## Expanding the Oxlint configuration
+## Production build
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and Oxlint's TypeScript related rules in your project.
+```powershell
+npm run build
+npm run preview
+```
+
+The deployable static site is generated in `dist/`.
+
+## Replace photos
+
+The gallery is in `src/components/MemoriesGallery.jsx`. Replace each placeholder source, caption, and optional date in the `memories` array near the top of that file. You can use local images from `public/assets/images/` or external image URLs.
+
+For best results, use optimized `.jpg`, `.webp`, or `.png` images, approximately 1200 pixels wide. Keep personal photos private and avoid uploading them to a public repository unless you are comfortable sharing them.
+
+## Add background music
+
+Add an audio file with this exact name:
+
+```text
+public/assets/romantic-music.mp3
+```
+
+You may replace the existing file, but it must remain licensed for this use or be royalty-free. Browsers do not allow music to autoplay with sound; the visitor can enable it using the music control.
+
+## Deploy to Vercel
+
+1. Push the project to GitHub.
+2. Import the repository at https://vercel.com/new.
+3. Vercel will detect Vite. The production settings are:
+   - Build command: `npm run build`
+   - Output directory: `dist`
+4. Deploy and share the generated public URL.
+
+The included `vercel.json` provides SPA routing support.
+
+## Deploy to Netlify
+
+1. Push the project to GitHub.
+2. Create a new site at https://app.netlify.com/start.
+3. Choose the repository.
+4. Deploy. The included `netlify.toml` sets the build command and `dist` publish directory.
+
+Alternatively, run `npm run build` locally and drag the `dist` folder into Netlify Drop.
